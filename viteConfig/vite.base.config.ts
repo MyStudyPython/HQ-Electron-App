@@ -8,10 +8,16 @@ import { defineConfig } from 'vite'
 // 导入 electron开发时的插件，实现一键启动两个服务的功能
 import { ElectronDevPlugin } from '../plugins/vite.dev.plugin'
 
+// 导入 打包时的插件，实现一键打包两个服务的功能
+import { ElectronBuildPlugin } from '../plugins/vite.build.plugin'
+
+console.log('load base-config...')
+
 export default defineConfig({
   plugins: [
     vue(), // 添加自定义的插件
     ElectronDevPlugin(),
+    ElectronBuildPlugin(),
   ],
 
   // 指定参数配置的文件目录(比较关键)

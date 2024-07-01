@@ -59,7 +59,11 @@ export const ElectronDevPlugin = (): Plugin => {
           'development',
           path.resolve(process.cwd(), './environmentconfig')
         )
-        console.log('plugins-dev : 获取的环境变量 ： ', envParams.VITE_ENV)
+        console.log(
+          'plugins-dev : 获取的环境变量 ： ',
+          envParams.VITE_ENV,
+          process.env.MODE
+        )
 
         // 核心3 ： 进程传参，发送到electron的进程中
         let electronProcess = spawn(
