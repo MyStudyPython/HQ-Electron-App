@@ -6,15 +6,15 @@
   "description": "The Project of Electron + Vue3 + Electron Forge",
   "main": "electron/main.ts",
   "scripts": {
+    "dev:web": "vite",
+    "dev:electron": "electron .",
     "dev": "vite",
-    "electron:dev": "electron .",
-    "dev:all": "vite",
-    "build": "vue-tsc -b && vite build",
-    "build:all": "run-p type-check \"build-only {@}\" --",
+    "build:web": "vue-tsc -b && vite build",
     "preview": "vite preview",
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "start:electron": "electron-forge start",
+    "package:electron": "electron-forge package",
+    "build:electron": "electron-forge make",
+    "build": "run-p type-check \"build-only {@}\" --"
   },
   "dependencies": {
     "electron-squirrel-startup": "^1.0.1",
